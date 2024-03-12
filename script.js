@@ -1,7 +1,10 @@
 document.getElementById('chat-form').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const userInputField = document.getElementById('user-input'); // Reference to the user input field
+    const userInputField = document.getElementById('user-input');
+    // Assuming the send button is the only button in your form,
+    // you can select it like this:
+    const sendButton = this.querySelector('button[type="submit"]');
     const userInput = userInputField.value;
     if (!userInput.trim()) return; // Skip empty inputs
 
@@ -9,7 +12,7 @@ document.getElementById('chat-form').addEventListener('submit', function(e) {
     
     // Display user's question
     const userDiv = document.createElement('div');
-    userDiv.classList.add('user-message'); // Add class for user messages
+    userDiv.classList.add('user-message'); // Keep the class for user messages
     userDiv.textContent = `You: ${userInput}`;
     chatBox.appendChild(userDiv);
 
@@ -23,8 +26,12 @@ document.getElementById('chat-form').addEventListener('submit', function(e) {
     loadingIndicator.style.display = 'block'; // Make it visible
     placeholderDiv.appendChild(loadingIndicator);
 
-    // Deactivate the user input box
+    // Deactivate the user input box and the send button
     userInputField.disabled = true;
+    sendButton.disabled = true;
+
+    // Clear input right after sending
+    userInputField.value = '';
 
     const threadID = localStorage.getItem('threadID');
 
@@ -70,8 +77,8 @@ document.getElementById('chat-form').addEventListener('submit', function(e) {
         placeholderDiv.remove(); // Ensure to remove the placeholder even if an error occurs
     })
     .finally(() => {
-        // Re-enable the user input box and clear the input after sending
+        // Re-enable the user input box and the send button
         userInputField.disabled = false;
-        userInputField.value = '';
+        sendButton.disabled = false;
     });
 });
