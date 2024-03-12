@@ -63,6 +63,12 @@ body {
     transform: translateY(-2px); /* Subtle lift effect */
 }
 
+#chat-form button:disabled {
+    background-color: grey;
+    color: white;
+    cursor: not-allowed;
+}
+
 .user-message, .assistant-response {
     padding: 12px;
     margin-bottom: 12px; /* Space after each message */
