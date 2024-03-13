@@ -82,10 +82,10 @@ document.getElementById('chat-form').addEventListener('submit', function(e) {
     });
 });
 
-//Adding for mobile as test//
+// New snippet to listen for the "keypress" event on the input field
 document.getElementById('user-input').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
         event.preventDefault(); // Prevent the default action to stop from any unexpected behavior
-        document.getElementById('chat-form').submit(); // Trigger the form submission
+        document.getElementById('chat-form').submit(); // Explicitly trigger the form submission
     }
 });
