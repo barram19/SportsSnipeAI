@@ -81,11 +81,3 @@ document.getElementById('chat-form').addEventListener('submit', function(e) {
         sendButton.disabled = false;
     });
 });
-
-// New snippet to listen for the "keypress" event on the input field
-document.getElementById('user-input').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-        event.preventDefault(); // Prevent the default action to stop from any unexpected behavior
-        document.getElementById('chat-form').submit(); // Explicitly trigger the form submission
-    }
-});
