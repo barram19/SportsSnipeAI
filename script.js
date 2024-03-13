@@ -81,3 +81,11 @@ document.getElementById('chat-form').addEventListener('submit', function(e) {
         sendButton.disabled = false;
     });
 });
+
+//Adding for mobile as test//
+document.getElementById('user-input').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Prevent the default action to stop from any unexpected behavior
+        document.getElementById('chat-form').submit(); // Trigger the form submission
+    }
+});
