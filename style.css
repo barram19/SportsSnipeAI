@@ -14,7 +14,7 @@ body {
 @media (max-width: 768px) {
     body {
         background-size: auto 100%; /* Adjust background size to fit the screen height */
-        background-position: top center; /* Adjust background position for mobile */
+        background-position: bottom center; /* Adjust background position for mobile */
     }
 }
 
