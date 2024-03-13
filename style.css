@@ -107,12 +107,19 @@ body {
 /* Responsive Design Tweaks */
 @media (max-width: 768px) {
     #chat-container {
-        position: fixed;
-        bottom: 10;
         width: 75%;
         margin: 2% auto;
         
     }
+    
+@media (max-width: 768px) {
+    #chat-form {
+        position: fixed; /* Keep the chat form fixed at the bottom of the viewport */
+        bottom: 0; /* Align the bottom edge of the chat form with the bottom of the viewport */
+        width: 100%; /* Ensure the chat form stretches across the full width of the viewport */
+        z-index: 1000; /* Ensure the chat form stays above other content */
+    }
+}
 
     #chat-box, #chat-form input[type="text"] {
         padding: 15px; /* Increased padding for better touch interaction */
