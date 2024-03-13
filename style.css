@@ -107,9 +107,11 @@ body {
 /* Responsive Design Tweaks */
 @media (max-width: 768px) {
     #chat-container {
-        /* Adjust margins or use positioning to bring the chat form closer to the bottom */
-        margin-bottom: 20px; /* Increase bottom margin */
-        position: relative; /* Ensure it's relative if you're going to use absolute positioning inside */
+        position: fixed;
+        bottom: 10;
+        width: 75%;
+        margin: 2% auto;
+        
     }
 
     #chat-box, #chat-form input[type="text"] {
